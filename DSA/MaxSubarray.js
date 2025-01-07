@@ -2,10 +2,10 @@ function maxSubArray(nums) {
     // Step 1: Initialize the maximum subarray sum to the first element
     let max = nums[0];
     
-    // Step 2: Initialize the sum of the current subarray to 0
+    // Step 2: Initialize the sum of the present subarray to 0
     let sum = 0;
 
-    // Step 3: Iterate through the array
+    // Step 3: Iterate  array through
     for (let i = 0; i < nums.length; i++) {
         // Add the current element to the running sum
         sum += nums[i];
