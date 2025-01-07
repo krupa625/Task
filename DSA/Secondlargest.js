@@ -1,26 +1,24 @@
-function secondLargest(nums) {
-    // Step 1: Check if the array has enough elements
-    if (nums.length < 2) {
-        return null; // If there are less than two elements, no second largest number exists
-    }
+class Solution {
+    // Function returns the second largest element
+    getSecondLargest(arr) {
+        // Step 1: Initialize two variables to keep track of largest and second largest numbers
+        let large = -1;     // 'large' will store the largest number
+        let slarge = -1;    // 'slarge' will store the second largest number
 
-    // Step 2: Initialize two variables to hold the largest and second largest values
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
-
-    // Step 3: Loop through the array
-    for (let i = 0; i < nums.length; i++) {
-        // If the current number is greater than the largest number
-        if (nums[i] > largest) {
-            secondLargest = largest; // Update second largest
-            largest = nums[i]; // Update largest
+        // Step 2: Loop through the array to find the largest and second largest elements
+        for (let i = 0; i < arr.length; i++) {
+            // Step 3: If the current element is greater than 'large', update both 'large' and 'slarge'
+            if (arr[i] > large) {
+                slarge = large;  // The old largest becomes the second largest
+                large = arr[i];   // Update 'large' to the current element
+            }
+            // Step 4: If the current element is greater than 'slarge' and not equal to 'large', update 'slarge'
+            else if (arr[i] > slarge && arr[i] !== large) {
+                slarge = arr[i];  // Update 'slarge' to the current element
+            }
         }
-        // If the current number is between largest and second largest
-        else if (nums[i] > secondLargest && nums[i] !== largest) {
-            secondLargest = nums[i]; // Update second largest
-        }
-    }
 
-    // Step 4: Return the second largest number
-    return secondLargest === -Infinity ? null : secondLargest;
+        // Step 5: Return the second largest number found
+        return slarge;  // If no second largest found, it will return -1
+    }
 }
