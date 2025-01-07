@@ -1,8 +1,8 @@
 var sumZero = function(n) {
     let result = [];
     
-    for (let i = 1; i <= Math.floor(n / 2); i++) {
-        result.push(i, -i);
+    for (let k = 1; k <= Math.floor(n / 2); k++) {
+        result.push(k, -k);
     }
     
     if (n % 2 !== 0) {
