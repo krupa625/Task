@@ -7,10 +7,10 @@ var twoSum = function(nums, target) {
     let numMap = new Map(); // Using Map for better performance in lookups
     
     for (let i = 0; i < nums.length; i++) {
-        let temporary = target - nums[i];
+        let rem = target - nums[i];
         
-        if (numMap.has(temporary)) {
-            return [numMap.get(temporary), i];
+        if (numMap.has(rem)) {
+            return [numMap.get(rem), i];
         }
         
         numMap.set(nums[i], i);
