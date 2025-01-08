@@ -4,14 +4,14 @@
  * @returns {number[][]} - An array of arrays, where each subarray is a triplet that sums to zero.
  */
 function threeSum(nums) {
-    // Sort the array to make it easier to find triplets and avoid duplicates
+    // sorting the array
     nums.sort((a, b) => a - b);
 
-    // Initialize the result array and a set to track unique triplets
+    // intialization
     let result = [];
     let uniqueTriplets = new Set();
 
-    // Loop through each number in the array as a potential first number of a triplet
+    // loop for initial value of nums
     for (let i = 0; i < nums.length; i++) {
         let j = i + 1;
         let k = nums.length - 1;
@@ -20,7 +20,7 @@ function threeSum(nums) {
         while (j < k) {
             let sum = nums[i] + nums[j] + nums[k];
 
-            // If the sum is zero, add the triplet to the set
+            // If the sum is zero, json string representation (stringify)
             if (sum === 0) {
                 uniqueTriplets.add(JSON.stringify([nums[i], nums[j], nums[k]]));
                 j++;
@@ -37,7 +37,7 @@ function threeSum(nums) {
         }
     }
 
-    // Convert the set of unique triplets back to an array
+    // parse use for convert json string into the array
     uniqueTriplets.forEach(triplet => {
         result.push(JSON.parse(triplet));
     });
