@@ -19,24 +19,23 @@ function search(nums, target) {
         }
         // If the left half is sorted
         else if (nums[mid] >= nums[low]) {
-            // Check if the target lies within the left half
+            
             if (nums[low] <= target && target <= nums[mid]) {
-                high = mid - 1; // Narrow the search to the left half
+                high = mid - 1; 
             } else {
-                low = mid + 1;  // Narrow the search to the right half
+                low = mid + 1; 
             }
         }
-        // If the right half is sorted
+        
         else {
             // Check if the target lies within the right half
             if (nums[mid] <= target && target <= nums[high]) {
-                low = mid + 1;  // Narrow the search to the right half
+                low = mid + 1;
             } else {
-                high = mid - 1; // Narrow the search to the left half
+                high = mid - 1; 
             }
         }
     }
 
-    // If the loop ends without finding the target, return -1
     return -1;
 }
