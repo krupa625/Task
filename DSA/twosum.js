@@ -10,7 +10,7 @@ var twoSum = function(nums, target) {
         let rem = target - nums[i];
         
         if (numMap.has(rem)) {
-            return [numMap.get(rem), i];
+            return [numMap.get(rem), i];//replace current value of num if that is less than target
         }
         
         numMap.set(nums[i], i);
