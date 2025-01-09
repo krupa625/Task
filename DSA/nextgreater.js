@@ -9,3 +9,7 @@ var nextGreaterElement = function(nums1, nums2) {
     });
     return nums1.map(n => map[n] || -1);
 };
+
+
+
+//time complexity :O(m+n)
